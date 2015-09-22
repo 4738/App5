@@ -1,0 +1,48 @@
+﻿<Page
+    x:Class="App5.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App5"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <!-- Man kann es ja noch gebrauchen 
+    <Page.BottomAppBar>
+        <CommandBar>
+            <CommandBar.Content>
+                <Grid/>
+            </CommandBar.Content>
+            <AppBarButton x:Name="PBButton" Icon="AllApps" Label="Periode auswählen" Click="PBButton_Click"/>
+        </CommandBar>
+    </Page.BottomAppBar>-->
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="127*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <RelativePanel x:Name="bPanel" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Bottom" RenderTransformOrigin="1,0.5" Height="98" MinWidth="360" MinHeight="141" MaxWidth="1080">
+            <ComboBox x:Name="gBox" HorizontalAlignment="Stretch" Height="59" Margin="5,0,5,5" VerticalAlignment="Bottom" SelectionChanged="gBox_SelectionChanged" RelativePanel.AlignBottomWithPanel="True" UseLayoutRounding="True" Padding="14,5,10,7" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True">
+                <ComboBoxItem Content="Alkalimetalle..."/>
+                <ComboBoxItem Content="Erdalkalimetalle"/>
+                <ComboBoxItem Content="3. Gruppe"/>
+                <ComboBoxItem Content="4. Gruppe"/>
+                <ComboBoxItem Content="5. Gruppe"/>
+                <ComboBoxItem Content="Chalkogene"/>
+                <ComboBoxItem Content="Halogene"/>
+                <ComboBoxItem Content="Edelgase"/>
+            </ComboBox>
+            <TextBox x:Name="ansBox" Height="50" Margin="10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" TextAlignment="Left" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignTopWithPanel="True" CanDrag="True" KeyUp="ansBox_KeyUp" Padding="10,3,10,5"/>
+        </RelativePanel>
+        <RelativePanel x:Name="cPanel" HorizontalAlignment="Center" Height="469" Margin="10,10,10,0" VerticalAlignment="Top" Width="340">
+            <RelativePanel.Background>
+                <ImageBrush Stretch="Fill"/>
+            </RelativePanel.Background>
+            <Frame x:Name="titleText" Content="Bitte wähle eine Hauptgruppe aus!" Margin="0" VerticalAlignment="Top" HorizontalContentAlignment="Center" HorizontalAlignment="Center" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" FontSize="18.667"/>
+            <TextBlock x:Name="elementBlock" HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="284" RelativePanel.Below="titleText" FontSize="64" FontWeight="Bold" TextAlignment="Center" RelativePanel.AlignBottomWith="" RelativePanel.Above="longBlock" Height="95" RelativePanel.AlignHorizontalCenterWithPanel="True" MinWidth="320"/>
+            <TextBlock x:Name="longBlock" HorizontalAlignment="Left" Height="36" Margin="-14.667,0,-15,0" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" MinWidth="340" Width="340" TextAlignment="Center"/>
+            <TextBlock x:Name="fullName" Margin="0,262,0,162" TextWrapping="Wrap" Text="" RelativePanel.Below="elementBlock" RelativePanel.Above="longBlock" VerticalAlignment="Center" HorizontalAlignment="Center" RelativePanel.AlignTopWith="elementBlock" RelativePanel.AlignBottomWith="longBlock" TextAlignment="Justify" RelativePanel.AlignHorizontalCenterWithPanel="True"/>
+        </RelativePanel>
+        <ContentPresenter HorizontalAlignment="Left" Height="100" Margin="507,150,-515,0" VerticalAlignment="Top" Width="368"/>
+    </Grid>
+</Page>
